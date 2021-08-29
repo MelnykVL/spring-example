@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("v1/students")
 public class StudentController {
     private final StudentService studentService;
 
@@ -32,6 +33,6 @@ public class StudentController {
 
     @PutMapping(path = "item")
     public void update(@RequestBody Student student) {
-        studentService.upd
+        studentService.update(student);
     }
 }
