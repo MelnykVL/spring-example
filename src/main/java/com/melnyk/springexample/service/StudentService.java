@@ -2,9 +2,11 @@ package com.melnyk.springexample.service;
 
 import com.melnyk.springexample.model.Student;
 import com.melnyk.springexample.repository.StudentRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentService {
     private final StudentRepository studentRepository;
 
