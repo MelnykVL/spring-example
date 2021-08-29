@@ -1,3 +1,13 @@
 language: java
 
-sudo: false
+sudo: enabled
+
+addons:
+  postgresql: "13.3"
+
+before_script:
+  - psql -c "create database students;" -U postgres // your database name
+  - sudo -u postgres psql -c "ALTER ROLE postgres WITH password '123456'" // if your password is different from 'postgres` use that one here
+
+services:
+  - postgresql
