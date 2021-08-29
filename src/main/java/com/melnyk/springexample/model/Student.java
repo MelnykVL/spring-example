@@ -1,12 +1,26 @@
 package com.melnyk.springexample.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.Period;
 
+@Entity
+@Table(name = "students")
 public class Student {
+    @Id
+    @Column(name = "studentId")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email", unique = true)
     private String email;
+
+    @Column(name = "dob")
     private LocalDate dob;
 
     public Student() {
