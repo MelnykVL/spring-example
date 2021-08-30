@@ -1,5 +1,6 @@
 package com.melnyk.springexample.service;
 
+import com.melnyk.springexample.exception.RestApiException;
 import com.melnyk.springexample.model.Student;
 import com.melnyk.springexample.repository.StudentRepository;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class StudentService {
     }
 
     public void add(Student student) {
+        if (studentRepository.findStudentByEmail(student.getEmail()).isPresent()) {
+            throw new RestApiException("Email is busy");
+        }
+
         studentRepository.save(student);
     }
 
