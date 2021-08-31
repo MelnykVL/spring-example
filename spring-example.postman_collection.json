@@ -14,13 +14,6 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"});",
-							"pm.test(\"Get list of students\", () => {",
-							"  const responseJson = pm.response.json();",
-							"",
-							"  pm.expect(responseJson.length).to.eql(2);",
-							"  pm.expect(responseJson[0].name).to.eql(\"Vlad\");",
-							"  pm.expect(responseJson[1].name).to.eql(\"Andriy\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -54,14 +47,6 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"});",
-							"pm.test(\"Save student and get list\", () => {",
-							"  const responseJson = pm.response.json();",
-							"",
-							"  pm.expect(responseJson.length).to.eql(3);",
-							"  pm.expect(responseJson[0].name).to.eql(\"Vlad\");",
-							"  pm.expect(responseJson[1].name).to.eql(\"Andriy\");",
-							"  pm.expect(responseJson[2].name).to.eql(\"Vlad Melnyk\");",
 							"});"
 						],
 						"type": "text/javascript"
